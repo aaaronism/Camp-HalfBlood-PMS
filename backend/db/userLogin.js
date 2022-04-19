@@ -1,4 +1,4 @@
-const userLogin = require('../models/loginModel')
+const userLogin = require('../models/loginModel.js')
 const seedData = require('./userLogin.json')
 
 userLogin.deleteMany({})
