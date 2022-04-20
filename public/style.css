@@ -1,0 +1,114 @@
+body {
+    height: 100%;
+    width: 100%
+}
+
+.userlogin {
+    position: absolute;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, .7);
+    padding: 5px 60px 35px 60px;
+    text-align: center;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 100px 20px #DDDDDD, 1px 1px 5px 1px #555555;
+    font-family: 'Play', sans-serif;
+}
+
+.userlogin h1 {
+    letter-spacing: 2px;
+    color: darkgreen;
+    font-size: 40px;
+}
+
+.loguser, .logpass {
+    text-align: center;
+    padding: 0 10px 20px 0;
+    font-size: 20px;
+}
+
+.logpass {
+    letter-spacing: .4px
+}
+
+.logbut {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: 'Play', sans-serif;
+}
+
+.loginbg {
+    background-image: url("./img/loginbk.gif");
+    background-repeat: no-repeat;
+    background-size: auto 140%;
+    background-position: center -100px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+.shadow {
+    box-shadow: 1px 1px 300px 30px inset #111111;
+    width: 100%;
+    height: 200%;
+    right: 0px;
+    left: 0px;
+    top: -200px;
+    bottom: 0px;
+    position: fixed;
+    z-index: 3;
+}
+
+.fogdiv {
+    background-image: url("./img/fog.png");
+    background-repeat: repeat-x;
+    opacity: 0.9;
+    width: 100%;
+    height: 220px;
+    position: fixed;
+    z-index: 4;
+    right: 0px;
+    bottom: 0px;
+    animation: slide 200s linear infinite;
+}
+
+.fogdiv2 {
+    background-image: url("./img/fog.png");
+    background-repeat: repeat-x;
+    opacity: 0.6;
+    width: 100%;
+    height: 280px;
+    position: fixed;
+    z-index: 2;
+    right: 0px;
+    bottom: 0px;
+    animation: slide 150s linear infinite;
+    animation-direction: reverse;
+}
+
+.fogdiv3 {
+    background-image: url("./img/fog.png");
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: top -10px;
+    opacity: 0.7;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    bottom: 0px;
+    animation: slide 100s linear infinite;
+    animation-direction: reverse;
+}
+
+@keyframes slide {
+    100% {
+        background-position:
+        5000px 0;
+    }
+}

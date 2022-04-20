@@ -6,6 +6,8 @@ const controllers = require('./controllers/controllers')
 const userLogin = require('./models/loginModel')
 const questModel = require('./models/questModel')
 
+app.use('/public', express.static('public'))
+
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
