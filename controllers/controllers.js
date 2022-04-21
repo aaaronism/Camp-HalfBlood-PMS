@@ -30,5 +30,13 @@ router.get('/camp', (req, res) => {
     })
 })
 
+router.get('/quests', (req, res) => {
+    questModel.find({}, (err, data) => {
+        res.render ('quests', {
+            quests: data
+        })
+    })
+})
+
 const usercontrollers = router
 module.exports = usercontrollers

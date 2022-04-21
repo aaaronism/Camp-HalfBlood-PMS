@@ -44,8 +44,8 @@ body {
     background-size: auto 140%;
     background-position: center -100px;
     width: 100%;
-    height: 100%;
-    position: fixed;
+    height: 800px;
+    position: absolute;
     right: 0px;
     bottom: 0px;
     z-index: 0;
@@ -111,4 +111,213 @@ body {
         background-position:
         5000px 0;
     }
+}
+
+.campbg {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/414e6701-8b89-44f2-8d01-fe0b69c4bf58/d893pb2-ddcd2ed2-f48c-4ea6-bea3-4684cd2f669b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQxNGU2NzAxLThiODktNDRmMi04ZDAxLWZlMGI2OWM0YmY1OFwvZDg5M3BiMi1kZGNkMmVkMi1mNDhjLTRlYTYtYmVhMy00Njg0Y2QyZjY2OWIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.zCp3R9-uVJVU99uV0i45hcX1GjuIcb7Crspepx3u2v8");
+    background-repeat: no-repeat;
+    background-size: auto 143%;
+    background-position: center -90px;
+    width: 100%;
+    height: 800px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+.welcomeban {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    background-color:rgba(50, 50, 50, .7);
+    box-shadow: 0 100px 50px 1px inset rgba(255, 255, 255, .05);
+}
+
+.welcomeban h1 {
+    color: lightgoldenrodyellow;
+    font-family: 'Play', sans-serif;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #FFFFFF;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.name {
+    font-size: 40px;
+    margin: 12px 100px 0 0;
+    animation: nslide 1s forwards;
+}
+
+@keyframes nslide {
+    0% {transform: translateX(100%)}
+    100% {transform: translateX(0%)}
+}
+
+@keyframes gfade {
+    0% {opacity: 0}
+    25% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.god {
+    font-size: 30px;
+    margin: 0 1px 12px 0;
+    font-style: italic;
+    animation: gfade 4s;
+}
+
+.todo {
+    position: absolute;
+    z-index: 3;
+}
+
+.light {
+    background-image: url("./img/lightpart.png");
+    background-repeat: repeat-x;
+    background-size: auto 200%;
+    opacity: 0.3;
+    width: 100%;
+    height: 400px;
+    position: fixed;
+    z-index: 1;
+    right: 0px;
+    bottom: -100px;
+    animation: slide 500s linear infinite;
+}
+
+.light2 {
+    background-image: url("./img/lightpart.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    opacity: 0.7;
+    width: 100%;
+    height: 400px;
+    position: fixed;
+    z-index: 2;
+    right: 0px;
+    bottom: -250px;
+    animation: slide 700s linear infinite;
+    animation-direction: reverse;
+}
+
+.ann, .quests, .iris {
+    position: fixed;
+    z-index: 5;
+}
+
+.ann {
+    left: 100px;
+    top: 100px;
+}
+
+.ann:hover + .chiron {
+    background-image: url("./img/chiron.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    width: 1400px;
+    height: 1000px;
+    position: fixed;
+    z-index: 2;
+    bottom: 0px;
+    right: -500px;
+}
+
+.quests {
+    left: 100px;
+    top: 250px;
+}
+
+.quests:hover + .oracle {
+    background-image: url("./img/hood.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: right;
+    opacity: .95;
+    width: 500px;
+    height: 650px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0px;
+    right: 10px;
+}
+
+.iris {
+    left: 100px;
+    top: 400px;
+}
+
+.iris:hover + .irispic {
+    background-image: url("./img/irisg.png");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: right;
+    width: 650px;
+    height: 1100px;
+    position: fixed;
+    z-index: 2;
+    bottom: -350px;
+    right: -150px;
+}
+
+.sun1 {
+    background-image: url("./img/sun1.png");
+    background-repeat: no-repeat;
+    background-size: 130%;
+    width: 100%;
+    height: 1500px;
+    position: fixed;
+    z-index: 4;
+    right: -100px;
+    top: -300px;
+    animation: fade 11s infinite;
+    transform: rotate(20deg);
+}
+
+@keyframes fade {
+    0% {opacity: .7}
+    50% {opacity: 0.1}
+    100% {opacity: .7}
+}
+
+
+.aicon {
+    background-color: rgba(255, 255, 255, .4);
+    background-image: url("./img/announcementicon.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    /* box-shadow: 0 0 5px #FFFFFF; */
+}
+
+.aicon:hover, .qicon:hover, .iicon:hover {
+    box-shadow: 0 0 20px 1px #FFFFFF;
+}
+
+.qicon {
+    background-color: rgba(255, 255, 255, .4);
+    background-image: url("./img/questicon.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+}
+
+.iicon {
+    background-color: rgba(255, 255, 255, .4);
+    background-image: url("./img/phoneicon.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+    position: fixed;
 }
