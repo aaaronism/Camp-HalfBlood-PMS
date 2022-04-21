@@ -148,7 +148,7 @@ body {
 .name {
     font-size: 40px;
     margin: 12px 100px 0 0;
-    animation: nslide 1s forwards;
+    animation: nslide 2s forwards, gfade 2s;
 }
 
 @keyframes nslide {
@@ -166,7 +166,7 @@ body {
     font-size: 30px;
     margin: 0 1px 12px 0;
     font-style: italic;
-    animation: gfade 4s;
+    animation: gfade 6s;
 }
 
 .todo {
@@ -224,6 +224,7 @@ body {
     z-index: 2;
     bottom: 0px;
     right: -500px;
+    animation: nslide 1s forwards;
 }
 
 .quests {
@@ -239,10 +240,11 @@ body {
     opacity: .95;
     width: 500px;
     height: 650px;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     bottom: 0px;
     right: 10px;
+    animation: nslide 1s forwards;
 }
 
 .iris {
@@ -261,6 +263,7 @@ body {
     z-index: 2;
     bottom: -350px;
     right: -150px;
+    animation: nslide 1s forwards;
 }
 
 .sun1 {
