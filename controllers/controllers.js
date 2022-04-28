@@ -9,19 +9,27 @@ router.get('/', (req, res) => {
     res.render('login')
 })
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     const {username, password} = req.body
-    userLogin.findOne({username, password}, 
-        (err, user) => {
-        if (err) {
-            console.log("hi");
-        }
-        else if (!user) {
-            res.redirect('back')
-        }
-        else 
-        res.render('camp', {screenname: user["name"], god: user["house"]})
-    })
+    let user, data;
+    try {
+        user = await userLogin.find({});
+        data = await questModel.find({})
+
+        userLogin.findOne({username, password}, 
+            (err, user) => {
+            if (err) {
+                console.log("hi");
+            }
+            else if (!user) {
+                res.redirect('back')
+            }
+            else 
+            res.render('camp', {screenname: user["name"], god: user["house"], quests: data})
+        });
+    } catch(e) {
+        return next(e)
+    }
 })
 
 router.get('/camp', (req, res) => {

@@ -1,16 +1,33 @@
 <script>
-    let questBut = document.getElementByClassName(".qicon")
-    let questBox = document.getElementsByClassName(".todo");
+    let questBut = document.querySelector(".qicon")
+    let questBox = document.querySelector(".todo");
     function openQuest() {
-        questBox.style.opacity("0")
+        document.querySelector(".todo").style.opacity = "1";
+        document.querySelector(".todo").style.zIndex = "5"
     }
-    questBut.addEventListener('click', openQuest())
+    questBut.addEventListener("click", openQuest())
 </script>
 <div class="welcomeban">
 <h1 class="name">Welcome <%= screenname %>,</h1>
 <h1 class="god">Child of <%= god %></h1>
 </div>
-<!-- <div class="todo"></div> -->
+<div class="todo">
+    <h1>Assigned Quests</h1>
+    <ul>
+        <% quests.forEach((quest) => { %>
+            <li>
+            <a href="/quests/<%=quest.id%>">
+            <button>
+                <div>
+                    <h2><%= quest.title %></h2>
+                    <h3>Progress: <%= quest.complete %></h3>
+                </div>
+            </button>
+            </a>
+            </li>
+    <% }) %>
+    </ul>
+</div>
 <div class="ann">
     <form action="announcements">
         <input class="aicon" type="submit" value="">
@@ -18,9 +35,7 @@
 </div>
 <div class="chiron"></div>
 <div class="quests">
-    <form>
-        <input class="qicon" type="submit" value="">
-    </form>
+        <button onclick="openQuest()" class="qicon"></button>
 </div>
 <div class="oracle"></div>
 <div class="iris">
@@ -34,3 +49,8 @@
 <div class="light2"></div>
 <div class="sun1"></div>
 <div class="sun2"></div>
+<div class="logout">
+    <form action="/" method="GET">
+        <input class="logout" type="submit" value="Logout">
+    </form>
+</div>
