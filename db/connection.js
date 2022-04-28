@@ -6,6 +6,6 @@ const mongoURI = process.env.NODE_ENV === "production"
 
 mongoose.connect(mongoURI)
 .then(instance => console.log(`connected to ${instance.connections[0].name}`))
-.catch(error => console.log('failed conn:', err))
+.catch(error => console.log('failed conn:', `${err}`))
 
 module.exports = mongoose
