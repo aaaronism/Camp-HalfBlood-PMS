@@ -324,3 +324,24 @@ body {
     height: 150px;
     position: fixed;
 }
+
+.todo {
+    background-color: rgba(255, 255, 255, .6);
+    width: 100%;
+    height: 450px;
+    position: fixed;
+    z-index: 5;
+    overflow-y: auto;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.todo ul {
+    list-style-type: none;
+    padding: 0 30px
+}
+
+.todo button {
+    width: 100%;
+}

@@ -1,14 +1,23 @@
 [
     {
-        "username": "Dionysus",
-        "password": "wine4lyfe"
-    },
-    {
+        "name": "Chiron",
+        "house": "n/a",
         "username": "Chiron",
-        "password": "hoofgoof"
+        "password": "hoofgoof",
+        "role": "admin"
     },
     {
+        "name": "Percy Jackson",
+        "house": "Poseidon",
         "username": "PercyJackson",
-        "password": "seahorseking"
+        "password": "seaweedbrain",
+        "role": "user"
+    },
+    {
+        "name": "Annabeth Chase",
+        "house": "Athena",
+        "username": "AnnabethChase",
+        "password": "brainsandbeauty",
+        "role": "user"
     }
 ]

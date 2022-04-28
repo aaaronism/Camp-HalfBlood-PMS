@@ -1,8 +1,16 @@
+<script>
+    let questBut = document.getElementByClassName(".qicon")
+    let questBox = document.getElementsByClassName(".todo");
+    function openQuest() {
+        questBox.style.opacity("0")
+    }
+    questBut.addEventListener('click', openQuest())
+</script>
 <div class="welcomeban">
-<h1 class="name">Welcome Percy Jackson,</h1>
-<h1 class="god">Child of Poseidon</h1>
+<h1 class="name">Welcome <%= screenname %>,</h1>
+<h1 class="god">Child of <%= god %></h1>
 </div>
-
+<div class="todo"></div>
 <div class="ann">
     <form action="announcements">
         <input class="aicon" type="submit" value="">
@@ -10,13 +18,13 @@
 </div>
 <div class="chiron"></div>
 <div class="quests">
-    <form action="quests">
+    <form>
         <input class="qicon" type="submit" value="">
     </form>
 </div>
 <div class="oracle"></div>
 <div class="iris">
-    <form action="comm">
+    <form action="message">
         <input class="iicon" type="submit" value="">
     </form>
 </div>

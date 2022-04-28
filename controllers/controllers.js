@@ -4,13 +4,14 @@ const router = express.Router()
 const userLogin = require('../models/loginModel')
 const questModel = require('../models/questModel')
 
+
 router.get('/', (req, res) => {
     res.render('login')
 })
 
 router.post('/', (req, res) => {
     const {username, password} = req.body
-    userLogin.findOne({username, password},
+    userLogin.findOne({username, password}, 
         (err, user) => {
         if (err) {
             console.log("hi");
@@ -18,15 +19,14 @@ router.post('/', (req, res) => {
         else if (!user) {
             res.redirect('back')
         }
-        else res.redirect('/camp')
+        else 
+        res.render('camp', {screenname: user["name"], god: user["house"]})
     })
 })
 
 router.get('/camp', (req, res) => {
     questModel.find({}, (err, data) => {
-        res.render('camp', {
-            quests: data
-        })
+        res.render('camp')
     })
 })
 
@@ -36,6 +36,24 @@ router.get('/quests', (req, res) => {
             quests: data
         })
     })
+})
+
+router.get('/quests/:id', (req, res) => {
+    questModel.findById(req.params.id).then((data) => {
+        res.render('indQuest', 
+        {
+            questName: data["title"],
+            questSum: data["summary"],
+            questTime: data["timeline"],
+            questBud: data["budget"],
+            questComp: data["complete"]
+        })
+    })
+    .catch(console.error);
+})
+
+router.get('/message', (req, res) => {
+    res.render('comm')
 })
 
 const usercontrollers = router
