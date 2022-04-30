@@ -11,7 +11,7 @@
     <a href="/quests/new" class="addquest">
         <button>Add New Quest</button>
     </a>
-    <h1>All Quests</h1>
+    <h1 class="allquests">All Quests</h1>
         <ul>
         <% quests.forEach((quest) => { %>
             <li>
@@ -24,11 +24,11 @@
                             </div>
                         </button>
                     </a>
-                    <a href="/quests/<%=quest.id%>/edit">
-                        <button>Edit</button>
+                    <a class="questedit" href="/quests/<%=quest.id%>/edit">
+                        <button class="questeditbut">Edit</button>
                     </a>
                     <form action="/quests/<%=quest.id%>?_method=Delete" method="POST">
-                        <input type="submit" value="Delete">
+                        <input class="questdelete" type="submit" value="Delete">
                     </form>
                 </div>
             </li>
@@ -50,20 +50,24 @@
     </div>
     <div class="chiron"></div>
     <div class="anntitle"><h1>Announcements</h1></div>
-    <div class="quests">
+    <div>
+        <div class="quests">
             <button class="qicon"></button>
+        </div>
+        <div class="oracle"></div>
+        <div class="questtitle"><h1>Quests</h1></div>
     </div>
-    <div class="oracle"></div>
-    <div class="questtitle"><h1>Quests</h1></div>
     <div class="iris">
             <button class="iicon"></button>
     </div>
     <div class="irispic"></div>
     <div class="iristitle"><h1>Contact</h1></div>
+    <div>
     <div class="addnew">
         <button class="addicon"></button>
     </div>
     <div class="addtitle"><h1>Add User</h1></div>
+    </div>
     <div class="campbg"></div>
     <div class="light"></div>
     <div class="light2"></div>
@@ -91,12 +95,14 @@
         questBut.style.animation = "ofade 1s forwards";
         annBut.style.animation = "ofade 1s forwards";
         irisBut.style.animation = "ofade 1s forwards";
+        addBut.style.animation = "ofade 1s forwards";
     }
     
     let butApp = () => {
-        questBut.style.animation = "gfade 2.5s forwards"
-        annBut.style.animation = "gfade 2.5s forwards"
-        irisBut.style.animation = "gfade 2.5s forwards"
+        questBut.style.animation = "gfade 2.5s forwards";
+        annBut.style.animation = "gfade 2.5s forwards";
+        irisBut.style.animation = "gfade 2.5s forwards";
+        addBut.style.animation = "gfade 2.5s forwards";
     }
 
     //     const test = document.getElementsByClassName("indQuest")

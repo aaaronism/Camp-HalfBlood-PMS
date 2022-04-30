@@ -223,6 +223,16 @@ body {
     animation: nslide 1s forwards;
 }
 
+.ann:hover ~ .anntitle {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    font-size: 40px;
+    font-family: 'Play', sans-serif;
+    z-index: 5;
+    animation: gfade 1s forwards;
+}
+
 .quests {
     left: 5%;
     top: 26%;
@@ -250,7 +260,7 @@ body {
     animation: nslide 1s forwards;
 }
 
-/* .quests:hover + .questtitle {
+.quests:hover ~ .questtitle {
     position: fixed;
     top: 20%;
     left: 30%;
@@ -258,7 +268,7 @@ body {
     font-family: 'Play', sans-serif;
     z-index: 5;
     animation: gfade 1s forwards;
-} */
+}
 
 .iris {
     left: 5%;
@@ -283,6 +293,26 @@ body {
     bottom: -350px;
     right: -150px;
     animation: nslide 1s forwards;
+}
+
+.iris:hover ~ .iristitle {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    font-size: 40px;
+    font-family: 'Play', sans-serif;
+    z-index: 5;
+    animation: gfade 1s forwards;
+}
+
+.addnew:hover + .addtitle {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    font-size: 40px;
+    font-family: 'Play', sans-serif;
+    z-index: 5;
+    animation: gfade 1s forwards;
 }
 
 .sun1 {
@@ -449,4 +479,34 @@ body {
     left: 30%;
     font-size: 40px;
     font-family: 'Play', sans-serif;
+}
+
+.allquests {
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-size: 50px
+}
+
+.questedit, .questdelete {
+    float: left;
+}
+
+.testing {
+    padding: 25px;
+}
+
+.questdelete {
+    background-color: lightcoral;
+    border-radius: 20px;
+    font-family: 'Play', sans-serif;
+    font-size: 15px;
+    padding: 7px 15px
+}
+
+.questeditbut {
+    background-color: lightskyblue;
+    border-radius: 20px;
+    font-family: 'Play', sans-serif;
+    font-size: 15px;
+    padding: 7px 15px
 }
