@@ -3,7 +3,7 @@
 [Visit Deployed App on Heroku Here](https://camp-halfblood.herokuapp.com/)
 
 ## Objective
-Guess the 5 letter word in 6 tries. You must press the enter button to submit each guess. After each guess, the tiles will turn green if you got the letter in the correct spot, yellow if the letter is in the word but in the wrong spot, and grey if it is not in the word at all.
+A fictional take on a company portal website, this is a full stack CRUD application.
 
 ![login screen](https://github.com/aaaronism/Camp-HalfBlood-PMS/blob/main/public/img/loginscreen.PNG)
 ![dashboard](https://github.com/aaaronism/Camp-HalfBlood-PMS/blob/main/public/img/dashboard.PNG)
