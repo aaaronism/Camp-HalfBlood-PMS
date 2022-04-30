@@ -6,7 +6,7 @@ const questSchema = new mongoose.Schema(
         summary: {type: String, required: true},
         timeline: {type: String, required: true},
         budget: {type: Number, required: true},
-        complete: {type: Boolean, required: false}
+        complete: {type: Boolean, default: false}
     },
 {timestamps: true}
 )

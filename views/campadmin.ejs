@@ -1,35 +1,43 @@
 <div class="welcomeban">
     <h1 class="name">Welcome <%= screenname %>,</h1>
     <h1 class="god">Camp Half Blood</h1>
-    </div>
-    <div class="announce">
-        <button class="announcebutton" type="button">X</button>
-        <button class="addann" type="button">Add New Announcement</button>
-    </div>
-    <div class="todo">
-        <button class="todobutton" type="button">X</button>
-        <a href="/quests/new" class="addquest"><button>Add New Quest</button></a>
-        <h1>Assigned Quests</h1>
+</div>
+<div class="announce">
+    <button class="announcebutton" type="button">X</button>
+    <button class="addann" type="button">Add New Announcement</button>
+</div>
+<div class="todo">
+    <button class="todobutton" type="button">X</button>
+    <a href="/quests/new" class="addquest">
+        <button>Add New Quest</button>
+    </a>
+    <h1>All Quests</h1>
         <ul>
-            <% quests.forEach((quest) => { %>
-                <li>
+        <% quests.forEach((quest) => { %>
+            <li>
                 <div class="testing">
                     <a href="/quests/<%=quest.id%>">
-                    <button class="questlist">
-                    <div>
-                        <h2><%= quest.title %></h2>
-                        <h3>Completed: <%= quest.complete %></h3>
-                    </div>
-                </button>
-                </a>
+                        <button class="questlist">
+                            <div>
+                                <h2><%= quest.title %></h2>
+                                <h3>Completed: <%= quest.complete %></h3>
+                            </div>
+                        </button>
+                    </a>
+                    <a href="/quests/<%=quest.id%>/edit">
+                        <button>Edit</button>
+                    </a>
+                    <form action="/quests/<%=quest.id%>?_method=Delete" method="POST">
+                        <input type="submit" value="Delete">
+                    </form>
                 </div>
-                </li>
+            </li>
         <% }) %>
         </ul>
     </div>
     <div class="contact">
         <form>
-        <button class="contactbutton" type="button">X</button>
+            <button class="contactbutton" type="button">X</button>
             <label for="yourname">Name:</label><br>
             <input type="text" id="iyname" name="iyname"><br>
             <label for="ymessage">Message:</label><br>
@@ -38,60 +46,58 @@
         </form>
     </div>
     <div class="ann">
-            <button class="aicon"></button>
+        <button class="aicon"></button>
     </div>
     <div class="chiron"></div>
+    <div class="anntitle"><h1>Announcements</h1></div>
     <div class="quests">
             <button class="qicon"></button>
     </div>
     <div class="oracle"></div>
+    <div class="questtitle"><h1>Quests</h1></div>
     <div class="iris">
             <button class="iicon"></button>
     </div>
     <div class="irispic"></div>
+    <div class="iristitle"><h1>Contact</h1></div>
+    <div class="addnew">
+        <button class="addicon"></button>
+    </div>
+    <div class="addtitle"><h1>Add User</h1></div>
     <div class="campbg"></div>
     <div class="light"></div>
     <div class="light2"></div>
     <div class="sun1"></div>
     <div class="sun2"></div>
-    <div class="logout">
+    <div class="">
         <form action="/" method="GET">
-            <input class="logout" type="submit" value="Logout">
+            <input id= "testy" class="logout" type="submit" value="">
         </form>
     </div>
-    <script>
-        let currentQuest;
-        const annBut = document.querySelector(".ann");        
-        const questBut = document.querySelector(".quests");
-        const irisBut = document.querySelector(".iris");
-        const annBox = document.querySelector(".announce");
-        const questBox = document.querySelector(".todo");
-        const irisBox = document.querySelector(".contact");
-        const announceBut = document.querySelector(".announcebutton");
-        const todoBut = document.querySelector(".todobutton");
-        const contactBut = document.querySelector(".contactbutton");
-        
+<script>
+    let currentQuest;
+    const annBut = document.querySelector(".ann");        
+    const questBut = document.querySelector(".quests");
+    const irisBut = document.querySelector(".iris");
+    const addBut = document.querySelector(".addnew")
+    const annBox = document.querySelector(".announce");
+    const questBox = document.querySelector(".todo");
+    const irisBox = document.querySelector(".contact");
+    const announceBut = document.querySelector(".announcebutton");
+    const todoBut = document.querySelector(".todobutton");
+    const contactBut = document.querySelector(".contactbutton");
     
-        let openIndQuest = () => {
-            let currentQuest = ""
-            console.log(currentQuest)
-            // document.querySelector(".div").zIndex = "5";
-            // document.querySelector(".div").width = "100%";
-            // document.querySelector(".div").height = "100%";
-            // document.querySelector(".div").backgroundColor = "black";
-        }
+    let butFade = () => {
+        questBut.style.animation = "ofade 1s forwards";
+        annBut.style.animation = "ofade 1s forwards";
+        irisBut.style.animation = "ofade 1s forwards";
+    }
     
-        let butFade = () => {
-            questBut.style.animation = "ofade 1s forwards";
-            annBut.style.animation = "ofade 1s forwards";
-            irisBut.style.animation = "ofade 1s forwards";
-        }
-    
-        let butApp = () => {
-            questBut.style.animation = "gfade 2.5s forwards"
-            annBut.style.animation = "gfade 2.5s forwards"
-            irisBut.style.animation = "gfade 2.5s forwards"
-        }
+    let butApp = () => {
+        questBut.style.animation = "gfade 2.5s forwards"
+        annBut.style.animation = "gfade 2.5s forwards"
+        irisBut.style.animation = "gfade 2.5s forwards"
+    }
 
     //     const test = document.getElementsByClassName("indQuest")
     //     const test2 = document.getElementsByClassName("testing")
@@ -135,46 +141,42 @@
     //         }
     // }
 
-        annBut.addEventListener("click", () => {
-            annBox.style.zIndex = "5";
-            annBox.style.animation = "gfade 2.5s forwards";
-            butFade()
-            document.querySelector(".chiron").style.opacity = "0"
-        })
+    annBut.addEventListener("click", () => {
+        annBox.style.zIndex = "5";
+        annBox.style.animation = "gfade 2.5s forwards";
+        butFade()
+        document.querySelector(".chiron").style.opacity = "0"
+    })
     
-        announceBut.addEventListener("click", () => {
-            annBox.style.animation = "ofade 1s forwards"
-            butApp()
-            document.querySelector(".chiron").style.opacity = ".95"      
-        })
+    announceBut.addEventListener("click", () => {
+        annBox.style.animation = "ofade 1s forwards"
+        butApp()
+        document.querySelector(".chiron").style.opacity = ".95"      
+    })
         
-        questBut.addEventListener("click", () => {
-            questBox.style.zIndex = "5";
-            questBox.style.animation = "gfade 2.5s forwards";
-            butFade()
-            document.querySelector(".oracle").style.opacity = "0"
-        })
+    questBut.addEventListener("click", () => {
+        questBox.style.zIndex = "5";
+        questBox.style.animation = "gfade 2.5s forwards";
+        butFade()
+        document.querySelector(".oracle").style.opacity = "0"
+    })
     
-        todoBut.addEventListener("click", () => {
-            questBox.style.animation = "ofade 1s forwards"
-            butApp()
-            document.querySelector(".oracle").style.opacity = ".95"      
-        })
+    todoBut.addEventListener("click", () => {
+        questBox.style.animation = "ofade 1s forwards"
+        butApp()
+        document.querySelector(".oracle").style.opacity = ".95"      
+    })
     
-        irisBut.addEventListener("click", () => {
-            irisBox.style.zIndex = "5";
-            irisBox.style.animation = "gfade 2.5s forwards";
-            butFade()
-            document.querySelector(".irispic").style.opacity = "0"
-        })
+    irisBut.addEventListener("click", () => {
+        irisBox.style.zIndex = "5";
+        irisBox.style.animation = "gfade 2.5s forwards";
+        butFade()
+        document.querySelector(".irispic").style.opacity = "0"
+    })
     
-        contactBut.addEventListener("click", () => {
-            irisBox.style.animation = "ofade 1s forwards"
-            butApp()
-            document.querySelector(".irispic").style.opacity = ".95"      
-        })
-    
-    //     if ( window.history.replaceState ) {
-    //   window.history.replaceState( null, null, window.location.href );
-    // }
-    </script>
+    contactBut.addEventListener("click", () => {
+        irisBox.style.animation = "ofade 1s forwards"
+        butApp()
+        document.querySelector(".irispic").style.opacity = ".95"      
+    })
+</script>

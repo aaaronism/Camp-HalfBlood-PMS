@@ -198,14 +198,14 @@ body {
     animation-direction: reverse;
 }
 
-.ann, .quests, .iris {
+.ann, .quests, .iris, .addnew {
     position: fixed;
     z-index: 5;
 }
 
 .ann {
-    left: 100px;
-    top: 100px;
+    left: 5%;
+    top: 7%;
     animation: none;
 }
 
@@ -224,8 +224,8 @@ body {
 }
 
 .quests {
-    left: 100px;
-    top: 250px;
+    left: 5%;
+    top: 26%;
     animation: none;
 }
 
@@ -250,10 +250,25 @@ body {
     animation: nslide 1s forwards;
 }
 
+/* .quests:hover + .questtitle {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    font-size: 40px;
+    font-family: 'Play', sans-serif;
+    z-index: 5;
+    animation: gfade 1s forwards;
+} */
+
 .iris {
-    left: 100px;
-    top: 400px;
+    left: 5%;
+    top: 45%;
     animation: none;
+}
+
+.addnew {
+    left: 5%;
+    top: 64.1%
 }
 
 .iris:hover + .irispic {
@@ -303,7 +318,7 @@ body {
     /* box-shadow: 0 0 5px #FFFFFF; */
 }
 
-.aicon:hover, .qicon:hover, .iicon:hover {
+.aicon:hover, .qicon:hover, .iicon:hover, .addicon:hover, .logout:hover {
     box-shadow: 0 0 20px 1px #FFFFFF;
 }
 
@@ -323,6 +338,17 @@ body {
     background-image: url("./img/phoneicon.png");
     background-repeat: no-repeat;
     background-size: 75%;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+}
+
+.addicon {
+    background-color: rgba(255, 255, 255, .4);
+    background-image: url("./img/adduser.png");
+    background-repeat: no-repeat;
+    background-size: 70%;
     background-position: center;
     width: 150px;
     height: 150px;
@@ -387,13 +413,6 @@ body {
     right: 0;
 }
 
-.logout {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    right: 0;
-}
-
 .badlogin {
     position: absolute;
     z-index: 6;
@@ -406,4 +425,28 @@ body {
     padding: 11.3px 0;
     color: red;
     font-family: Arial, Helvetica, sans-serif
+}
+
+.logout {
+    position: absolute;
+    z-index: 5;
+    width: 100px;
+    height: 50px;
+    top: 5%;
+    right: 5%;
+    background-color: rgba(255, 255, 255, .4);
+    background-image: url("./img/logout.png");
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-position: center;
+}
+
+
+.anntitle, .questtitle, .iristitle, .addtitle {
+    position: absolute;
+    z-index: 0;
+    top: 20%;
+    left: 30%;
+    font-size: 40px;
+    font-family: 'Play', sans-serif;
 }
