@@ -1,18 +1,18 @@
 <div class="newquestmaker">
+  <div class="form-group">
     <h2>Edit Quest Information</h2>
     <form action="/quests/<%=quest.id%>/?_method=put" method="POST">
-        <div class="form-group">
           <label for="title">Title:</label>
           <input type="text" id="title" name="title" class="" value="<%=quest.title%>" />
           <label for="summary">Summary:</label>
-          <input type="text" id="summary" name="summary" class="" value="<%=quest.summary%>"/>
+          <textarea type="text" id="summary" name="summary" class=""><%=quest.summary%></textarea>
           <label for="timeline">Timeline:</label>
           <input type="text" id="timeline" name="timeline" class="" value="<%=quest.timeline%>"/>
-          <label for="budget">Budget:</label>
-          <input type="number" id="budget" name="budget" class="" value="<%=quest.budget%>"/>
-        </div>
-        <input type="submit" value="Update Quest" class="" />
+          <label for="budget">Budget:</label><br>
+          <input type="number" id="budget" name="budget" class="" value="<%=quest.budget%>"/><br><br>
+        <input type="submit" value="Update Quest" class="" /><br><br>
         <a href="javascript:history.back()" class="">Cancel</a>
+    </div>
       </form>
 </div>
 

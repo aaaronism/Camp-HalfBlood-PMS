@@ -1,4 +1,5 @@
 <div class="newquestmaker">
+    <div class="indquestdeet">
                     <h1><%= quest.title %></h1>
                     <h2>Summary</h2>
                     <h3><%= quest.summary %></h3>
@@ -7,14 +8,15 @@
                     <h2>Budget</h2>
                     <h3><%= quest.budget %></h3>
                     <h3>Completed:</h3>
-                    <h4><%=quest.complete%></h4>
+                    <h4><%=quest.complete%></h4><br>
                     <a href="/quests/<%=quest.id%>/edit">
                         <button>Edit</button>
-                    </a>
+                    </a><br><br>
                     <form action="/quests/<%=quest.id%>?_method=Delete" method="POST">
                         <input type="submit" value="Delete">
-                    </form>
+                    </form><br>
                     <a href="javascript:history.back()" class="">Back</a>
+                    </div>
 </div>
 
 

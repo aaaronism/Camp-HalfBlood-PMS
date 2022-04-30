@@ -8,10 +8,12 @@
 </div>
 <div class="todo">
     <button class="todobutton" type="button">X</button>
-    <a href="/quests/new" class="addquest">
-        <button>Add New Quest</button>
-    </a>
     <h1 class="allquests">All Quests</h1>
+    <div class="questtwo">
+        <a href="/quests/new" class="addquest">
+            <button class="addnewquest">+New</button>
+        </a>
+        </div>
         <ul>
         <% quests.forEach((quest) => { %>
             <li>
@@ -152,12 +154,14 @@
         annBox.style.animation = "gfade 2.5s forwards";
         butFade()
         document.querySelector(".chiron").style.opacity = "0"
+        document.querySelector(".anntitle > h1").style.opacity = "0"
     })
     
     announceBut.addEventListener("click", () => {
         annBox.style.animation = "ofade 1s forwards"
         butApp()
-        document.querySelector(".chiron").style.opacity = ".95"      
+        document.querySelector(".chiron").style.opacity = ".95"
+        document.querySelector(".anntitle > h1").style.opacity = ".95"      
     })
         
     questBut.addEventListener("click", () => {
@@ -165,12 +169,14 @@
         questBox.style.animation = "gfade 2.5s forwards";
         butFade()
         document.querySelector(".oracle").style.opacity = "0"
+        document.querySelector(".questtitle > h1").style.opacity = "0"
     })
     
     todoBut.addEventListener("click", () => {
         questBox.style.animation = "ofade 1s forwards"
         butApp()
-        document.querySelector(".oracle").style.opacity = ".95"      
+        document.querySelector(".oracle").style.opacity = ".95"
+        document.querySelector(".questtitle > h1").style.opacity = ".95"      
     })
     
     irisBut.addEventListener("click", () => {
@@ -178,11 +184,13 @@
         irisBox.style.animation = "gfade 2.5s forwards";
         butFade()
         document.querySelector(".irispic").style.opacity = "0"
+        document.querySelector(".iristitle > h1").style.opacity = "0"
     })
     
     contactBut.addEventListener("click", () => {
         irisBox.style.animation = "ofade 1s forwards"
         butApp()
-        document.querySelector(".irispic").style.opacity = ".95"      
+        document.querySelector(".irispic").style.opacity = ".95"
+        document.querySelector(".iristitle > h1").style.opacity = ".95"      
     })
 </script>
