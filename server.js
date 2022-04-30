@@ -6,6 +6,8 @@ const ejsLayouts = require('express-ejs-layouts')
 const controllers = require('./controllers/controllers')
 const userLogin = require('./models/loginModel')
 const questModel = require('./models/questModel')
+const annModel = require('./models/announceModel')
+const messModel = require('./models/messageModel')
 
 app.use('/public', express.static('public'))
 

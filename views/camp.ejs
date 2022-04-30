@@ -1,47 +1,49 @@
-<script>
-    let questBut = document.querySelector(".qicon")
-    let questBox = document.querySelector(".todo");
-    function openQuest() {
-        document.querySelector(".todo").style.opacity = "1";
-        document.querySelector(".todo").style.zIndex = "5"
-    }
-    questBut.addEventListener("click", openQuest())
-</script>
 <div class="welcomeban">
 <h1 class="name">Welcome <%= screenname %>,</h1>
 <h1 class="god">Child of <%= god %></h1>
 </div>
+<div class="announce">
+    <button class="announcebutton" type="button">X</button>
+</div>
 <div class="todo">
+    <button class="todobutton" type="button">X</button>
     <h1>Assigned Quests</h1>
     <ul>
         <% quests.forEach((quest) => { %>
             <li>
-            <a href="/quests/<%=quest.id%>">
-            <button>
+            <div class="<%=quest.id%>">
+                <button onclick="" class="questlist">
                 <div>
                     <h2><%= quest.title %></h2>
                     <h3>Progress: <%= quest.complete %></h3>
                 </div>
             </button>
-            </a>
+            </div>
             </li>
     <% }) %>
     </ul>
 </div>
-<div class="ann">
-    <form action="announcements">
-        <input class="aicon" type="submit" value="">
+<div class="div<%=quests.id%>"></div>
+<div class="contact">
+    <button class="contactbutton" type="button">X</button>
+    <form>
+        <label for="yourname">Name:</label><br>
+        <input type="text" id="iyname" name="iyname"><br>
+        <label for="ymessage">Message:</label><br>
+        <input type="text" id="iymessage" name="iymessage" style="width: 500px; height: 200px"><br><br>
+        <input type="submit" value="Submit">
     </form>
+</div>
+<div class="ann">
+        <button class="aicon"></button>
 </div>
 <div class="chiron"></div>
 <div class="quests">
-        <button onclick="openQuest()" class="qicon"></button>
+        <button class="qicon"></button>
 </div>
 <div class="oracle"></div>
 <div class="iris">
-    <form action="message">
-        <input class="iicon" type="submit" value="">
-    </form>
+        <button class="iicon"></button>
 </div>
 <div class="irispic"></div>
 <div class="campbg"></div>
@@ -54,3 +56,80 @@
         <input class="logout" type="submit" value="Logout">
     </form>
 </div>
+<script>
+    let currentQuest;
+    const annBut = document.querySelector(".ann");        
+    const questBut = document.querySelector(".quests");
+    const irisBut = document.querySelector(".iris");
+    const annBox = document.querySelector(".announce");
+    const questBox = document.querySelector(".todo");
+    const irisBox = document.querySelector(".contact");
+    const announceBut = document.querySelector(".announcebutton");
+    const todoBut = document.querySelector(".todobutton");
+    const contactBut = document.querySelector(".contactbutton");
+    
+
+    let openIndQuest = () => {
+        let currentQuest = ""
+        console.log(currentQuest)
+        // document.querySelector(".div").zIndex = "5";
+        // document.querySelector(".div").width = "100%";
+        // document.querySelector(".div").height = "100%";
+        // document.querySelector(".div").backgroundColor = "black";
+    }
+
+    let butFade = () => {
+        questBut.style.animation = "ofade 1s forwards";
+        annBut.style.animation = "ofade 1s forwards";
+        irisBut.style.animation = "ofade 1s forwards";
+    }
+
+    let butApp = () => {
+        questBut.style.animation = "gfade 2.5s forwards"
+        annBut.style.animation = "gfade 2.5s forwards"
+        irisBut.style.animation = "gfade 2.5s forwards"
+    }
+    
+    annBut.addEventListener("click", () => {
+        annBox.style.zIndex = "5";
+        annBox.style.animation = "gfade 2.5s forwards";
+        butFade()
+        document.querySelector(".chiron").style.opacity = "0"
+    })
+
+    announceBut.addEventListener("click", () => {
+        annBox.style.animation = "ofade 1s forwards"
+        butApp()
+        document.querySelector(".chiron").style.opacity = ".95"      
+    })
+    
+    questBut.addEventListener("click", () => {
+        questBox.style.zIndex = "5";
+        questBox.style.animation = "gfade 2.5s forwards";
+        butFade()
+        document.querySelector(".oracle").style.opacity = "0"
+    })
+
+    todoBut.addEventListener("click", () => {
+        questBox.style.animation = "ofade 1s forwards"
+        butApp()
+        document.querySelector(".oracle").style.opacity = ".95"      
+    })
+
+    irisBut.addEventListener("click", () => {
+        irisBox.style.zIndex = "5";
+        irisBox.style.animation = "gfade 2.5s forwards";
+        butFade()
+        document.querySelector(".irispic").style.opacity = "0"
+    })
+
+    contactBut.addEventListener("click", () => {
+        irisBox.style.animation = "ofade 1s forwards"
+        butApp()
+        document.querySelector(".irispic").style.opacity = ".95"      
+    })
+
+//     if ( window.history.replaceState ) {
+//   window.history.replaceState( null, null, window.location.href );
+// }
+</script>
